@@ -8,14 +8,14 @@ const router = new HttpRouter({
   },
 });
 
-router.route('GET', '/hello-world', async (req, res) => {
+router.route('GET', 'hello-world', async (req, res) => {
   // const result = await HttpClient
   //   .request({ url: 'https://api.paynow.com/payments', method: 'POST' });
 
   return 'Hello World';
 });
 
-router.route('POST', '/request', async (req, res) => {
+router.route('POST', 'request', async (req, res) => {
   const body = await req.body('text/plain');
 
   console.log(body);
@@ -25,11 +25,11 @@ router.route('POST', '/request', async (req, res) => {
   return true;
 });
 
-router.route('GET', '/test1', (req, res) => {
+router.route('GET', 'test1', (req, res) => {
   return req.qs();
 });
 
-router.route('GET', '/test2/:id', (req, res) => {
+router.route('GET', 'test2/:id', (req, res) => {
   if (req.params.id === '1') {
     throw new HttpException(409);
   }

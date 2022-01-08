@@ -1,9 +1,9 @@
 import http from 'http';
-import { app } from './app';
+import { router } from './router';
 
 export const server = http.createServer((req, res) => {
   try {
-    app.handle(req, res);
+    router.handle(req, res);
   } catch (err) {
     console.log('globalny error: ', err);
   }

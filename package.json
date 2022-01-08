@@ -1,7 +1,7 @@
 {
   "name": "typescript-starter",
   "scripts": {
-    "serve": "ts-node src/main.ts",
+    "serve": "ts-node src/http.ts",
     "build": "tsc -p tsconfig.build.json",
     "prebuild": "rimraf dist",
     "lint": "eslint .",

@@ -1,5 +1,5 @@
 import { TestBed } from '@caviajs/http';
-import { server } from '../../src/app/server';
+import { server } from '../../src/http/server';
 
 describe('GET /hello-world', () => {
   it('should return Hello World', async () => {

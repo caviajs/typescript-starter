@@ -1,7 +1,8 @@
 {
   "name": "typescript-starter",
   "scripts": {
-    "serve": "ts-node src/http/start.ts",
+    "serve:http": "ts-node src/http/start.ts",
+    "serve:schedule": "ts-node src/schedule/start.ts",
     "build": "tsc -p tsconfig.build.json",
     "prebuild": "rimraf dist",
     "lint": "eslint .",
@@ -12,7 +13,8 @@
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
-    "@caviajs/http": "^1.0.0"
+    "@caviajs/http": "^1.0.0",
+    "@caviajs/schedule": "^1.0.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.22",

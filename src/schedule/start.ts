@@ -1,4 +1,5 @@
 import { scheduler } from './scheduler';
+import { Logger } from '@caviajs/logger';
 
 scheduler
-  .start(() => console.log('Scheduler running'));
+  .start(() => Logger.info('Scheduler running'));

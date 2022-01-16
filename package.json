@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@caviajs/http": "^1.0.0",
+    "@caviajs/logger": "^1.0.0",
     "@caviajs/schedule": "^1.0.0"
   },
   "devDependencies": {

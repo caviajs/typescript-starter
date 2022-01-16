@@ -1,9 +1,10 @@
 import { Scheduler } from '@caviajs/schedule';
+import { Logger } from '@caviajs/logger';
 
 const scheduler = new Scheduler();
 
 scheduler.define('* * * * *', () => {
-  console.log('Hello World');
+  Logger.trace('Hello Schedule');
 });
 
 export { scheduler };

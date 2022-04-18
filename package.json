@@ -1,49 +1,24 @@
 {
   "name": "typescript-starter",
   "scripts": {
-    "serve:http": "ts-node src/http/start.ts",
-    "serve:schedule": "ts-node src/schedule/start.ts",
-    "build": "tsc -p tsconfig.build.json",
+    "serve": "ts-node src/start.ts",
+    "build": "tsc",
     "prebuild": "rimraf dist",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:debug": "node --inspect-brk -r ts-node/register jest --runInBand",
-    "test:watch": "jest --watchAll"
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@caviajs/http": "^1.0.0",
-    "@caviajs/logger": "^1.0.0",
-    "@caviajs/schedule": "^1.0.0"
+    "@caviajs/core": "^0.0.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.5.4"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.22",
-    "@types/node": "^14.14.37",
+    "@types/node": "~16.11.7",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
     "eslint": "^7.24.0",
-    "jest": "^26.6.3",
     "rimraf": "^3.0.2",
-    "ts-jest": "^26.5.4",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
-  },
-  "jest": {
-    "coverageDirectory": "coverage",
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "roots": [
-      "src",
-      "test"
-    ],
-    "testEnvironment": "node",
-    "testRegex": ".spec.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    }
   }
 }

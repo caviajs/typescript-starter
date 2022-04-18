@@ -4,7 +4,6 @@
 
 # include whitelist
 !/src/**
-!/test/**
 !/.editorconfig
 !/.eslintrc
 !/.gitignore

@@ -1,32 +1,13 @@
 import 'reflect-metadata';
 
-import { Application, Provider, Package, UseInterceptor, RedisPackage } from '@caviajs/core';
-
-import { MetaController } from './controllers/meta.controller';
-import { UserController } from './controllers/user.controller';
-import { BodyParseInterceptor } from './interceptors/body-parse.interceptor';
+import { Application, ENV_SCHEMA, EnvSchema, UseInterceptor } from '@caviajs/core';
+import { UsersController } from './controllers/users.controller';
 import { SentryInterceptor } from './interceptors/sentry.interceptor';
-import { ValidatorInterceptor } from './interceptors/validator.interceptor';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { BodyParseInterceptor } from './interceptors/body-parse.interceptor';
 import { CookiesParseInterceptor } from './interceptors/cookies-parse.interceptor';
 import { QueryParseInterceptor } from './interceptors/query-parse.interceptor';
-import { HelloWorker } from './workers/hello.worker';
-
-const packages: Package[] = [
-  RedisPackage.declareConnection('first-connection'),
-];
-
-const providers: Provider[] = [
-  MetaController,
-  UserController,
-
-  BodyParseInterceptor,
-  CookiesParseInterceptor,
-  QueryParseInterceptor,
-  SentryInterceptor,
-  ValidatorInterceptor,
-
-  HelloWorker,
-];
+import { ValidatorInterceptor } from './interceptors/validator.interceptor';
 
 @UseInterceptor(SentryInterceptor)
 @UseInterceptor(BodyParseInterceptor)
@@ -34,8 +15,27 @@ const providers: Provider[] = [
 @UseInterceptor(QueryParseInterceptor)
 @UseInterceptor(ValidatorInterceptor)
 @Application({
-  packages: packages,
-  providers: providers,
+  packages: [],
+  providers: [
+    {
+      provide: ENV_SCHEMA,
+      useValue: <EnvSchema>{
+        DATABASE_URL: {
+          type: 'string',
+          required: true,
+        },
+      },
+    },
+
+    UsersController,
+
+    AuthInterceptor,
+    BodyParseInterceptor,
+    CookiesParseInterceptor,
+    QueryParseInterceptor,
+    SentryInterceptor,
+    ValidatorInterceptor,
+  ],
 })
 export class App {
 }

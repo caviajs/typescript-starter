@@ -5,14 +5,7 @@ import { CaviaApplication, CaviaFactory } from '@caviajs/core';
 import { App } from './app';
 
 (async () => {
-  const app: CaviaApplication = await CaviaFactory.create(App, {
-    env: {
-      DATABASE_URL: {
-        type: 'string',
-        required: true,
-      },
-    },
-  });
+  const app: CaviaApplication = await CaviaFactory.create(App);
 
   const listener = async (signal) => {
     try {

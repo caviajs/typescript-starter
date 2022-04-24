@@ -1,14 +1,14 @@
-import { Injectable, Interceptor, InterceptorContext, Logger, Next } from '@caviajs/core';
+import { Injectable, Interceptor, Logger, Next, Request, Response } from '@caviajs/core';
 import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable()
-export class SentryInterceptor implements Interceptor {
-  constructor(
-    protected readonly logger: Logger,
-  ) {
+export class SentryInterceptor extends Interceptor {
+
+  constructor(protected readonly logger: Logger) {
+    super();
   }
 
-  public async intercept(ctx: InterceptorContext, next: Next): Promise<Observable<any>> {
+  public async intercept(request: Request, response: Response, next: Next): Promise<Observable<any>> {
     return next
       .handle()
       .pipe(
@@ -19,4 +19,5 @@ export class SentryInterceptor implements Interceptor {
         }),
       );
   }
+
 }

@@ -1,4 +1,4 @@
-import { Injectable, Interceptor, InterceptorContext, Next } from '@caviajs/core';
+import { Injectable, Interceptor, Next, Request, Response } from '@caviajs/core';
 import { Observable } from 'rxjs';
 import { parse } from 'url';
 
@@ -9,10 +9,12 @@ declare module 'http' {
 }
 
 @Injectable()
-export class QueryParseInterceptor implements Interceptor {
-  public async intercept(ctx: InterceptorContext, next: Next): Promise<Observable<any>> {
-    ctx.request.query = parse(ctx.request.url, true).query;
+export class QueryParseInterceptor extends Interceptor {
+
+  public async intercept(request: Request, response: Response, next: Next): Promise<Observable<any>> {
+    request.query = parse(request.url, true).query;
 
     return next.handle();
   }
+
 }

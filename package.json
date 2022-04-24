@@ -8,17 +8,17 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@caviajs/core": "^0.0.1",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.5.4"
+    "@caviajs/core": "~0.0.1",
+    "reflect-metadata": "~0.1.13",
+    "rxjs": "~7.5.4"
   },
   "devDependencies": {
     "@types/node": "~16.11.7",
-    "@typescript-eslint/eslint-plugin": "^4.21.0",
-    "@typescript-eslint/parser": "^4.21.0",
-    "eslint": "^7.24.0",
-    "rimraf": "^3.0.2",
-    "ts-node": "^9.1.1",
+    "@typescript-eslint/eslint-plugin": "~4.21.0",
+    "@typescript-eslint/parser": "~4.21.0",
+    "eslint": "~7.24.0",
+    "rimraf": "~3.0.2",
+    "ts-node": "~9.1.1",
     "typescript": "~4.2.4"
   }
 }

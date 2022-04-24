@@ -1,4 +1,4 @@
-import { Cookies, Injectable, Interceptor, InterceptorContext, Next } from '@caviajs/core';
+import { Cookies, Injectable, Interceptor, Next, Request, Response } from '@caviajs/core';
 import { Observable } from 'rxjs';
 
 declare module 'http' {
@@ -8,14 +8,15 @@ declare module 'http' {
 }
 
 @Injectable()
-export class CookiesParseInterceptor implements Interceptor {
+export class CookiesParseInterceptor extends Interceptor {
   constructor(
     protected readonly cookies: Cookies,
   ) {
+    super();
   }
 
-  public async intercept(ctx: InterceptorContext, next: Next): Promise<Observable<any>> {
-    ctx.request.cookies = await this.cookies.parseCookies(ctx.request);
+  public async intercept(request: Request, response: Response, next: Next): Promise<Observable<any>> {
+    request.cookies = await this.cookies.parseCookies(request);
 
     return next.handle();
   }

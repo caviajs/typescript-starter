@@ -1,4 +1,4 @@
-import { Injectable, Interceptor, InterceptorContext, Next, Body } from '@caviajs/core';
+import { Injectable, Interceptor, Next, Body, Request, Response } from '@caviajs/core';
 import { Observable } from 'rxjs';
 
 declare module 'http' {
@@ -8,15 +8,16 @@ declare module 'http' {
 }
 
 @Injectable()
-export class BodyParseInterceptor implements Interceptor {
-  constructor(
-    protected readonly body: Body,
-  ) {
+export class BodyParseInterceptor extends Interceptor {
+
+  constructor(protected readonly body: Body) {
+    super();
   }
 
-  public async intercept(ctx: InterceptorContext, next: Next): Promise<Observable<any>> {
-    ctx.request.body = await this.body.parseBody(ctx.request);
+  public async intercept(request: Request, response: Response, next: Next): Promise<Observable<any>> {
+    request.body = await this.body.parseBody(request);
 
     return next.handle();
   }
+
 }

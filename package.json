@@ -8,7 +8,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@caviajs/core": "~0.0.1",
+    "@caviajs/core": "^0.0.1",
     "reflect-metadata": "~0.1.13",
     "rxjs": "~7.5.4"
   },

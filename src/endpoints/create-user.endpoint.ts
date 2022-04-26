@@ -2,7 +2,6 @@ import { Request, Response, Injectable, Endpoint, EndpointMetadata } from '@cavi
 
 @Injectable()
 export class CreateUserEndpoint extends Endpoint {
-
   public readonly metadata: EndpointMetadata = {
     data: {
       permissions: 'users:create',
@@ -24,5 +23,4 @@ export class CreateUserEndpoint extends Endpoint {
 
     return 'Hello World';
   }
-
 }

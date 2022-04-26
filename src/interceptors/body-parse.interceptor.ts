@@ -9,7 +9,6 @@ declare module 'http' {
 
 @Injectable()
 export class BodyParseInterceptor extends Interceptor {
-
   constructor(protected readonly body: Body) {
     super();
   }
@@ -19,5 +18,4 @@ export class BodyParseInterceptor extends Interceptor {
 
     return next.handle();
   }
-
 }

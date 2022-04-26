@@ -2,7 +2,6 @@ import { Request, Response, Injectable, Endpoint, EndpointMetadata } from '@cavi
 
 @Injectable()
 export class UpdateUserEndpoint extends Endpoint {
-
   public readonly metadata: EndpointMetadata = {
     data: {
       permissions: 'users:update',
@@ -33,5 +32,4 @@ export class UpdateUserEndpoint extends Endpoint {
 
     return 'Hellou';
   }
-
 }

@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class LoggerInterceptor extends Interceptor {
-
   constructor(protected readonly logger: Logger) {
     super();
   }
@@ -13,5 +12,4 @@ export class LoggerInterceptor extends Interceptor {
 
     return next.handle();
   }
-
 }

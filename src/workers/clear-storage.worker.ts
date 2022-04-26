@@ -2,7 +2,6 @@ import { Injectable, Logger, Worker, WorkerMetadata } from '@caviajs/core';
 
 @Injectable()
 export class ClearStorageWorker extends Worker {
-
   public readonly metadata: WorkerMetadata = {
     expression: '* * * * *',
   };
@@ -16,5 +15,4 @@ export class ClearStorageWorker extends Worker {
 
     // ...
   }
-
 }

@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ValidatorInterceptor extends Interceptor {
-
   constructor(protected readonly validator: Validator) {
     super();
   }
@@ -25,5 +24,4 @@ export class ValidatorInterceptor extends Interceptor {
 
     return next.handle();
   }
-
 }

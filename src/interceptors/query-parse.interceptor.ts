@@ -10,11 +10,9 @@ declare module 'http' {
 
 @Injectable()
 export class QueryParseInterceptor extends Interceptor {
-
   public async intercept(request: Request, response: Response, next: Next): Promise<Observable<any>> {
     request.query = parse(request.url, true).query;
 
     return next.handle();
   }
-
 }

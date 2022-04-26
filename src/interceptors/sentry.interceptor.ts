@@ -3,7 +3,6 @@ import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable()
 export class SentryInterceptor extends Interceptor {
-
   constructor(protected readonly logger: Logger) {
     super();
   }
@@ -19,5 +18,4 @@ export class SentryInterceptor extends Interceptor {
         }),
       );
   }
-
 }

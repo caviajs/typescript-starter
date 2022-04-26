@@ -2,7 +2,6 @@ import { Request, Response, Injectable, Endpoint, EndpointMetadata, HttpExceptio
 
 @Injectable()
 export class ApiSpecEndpoint extends Endpoint {
-
   public readonly metadata: EndpointMetadata = {
     method: 'GET',
     path: '/api-spec',
@@ -15,5 +14,4 @@ export class ApiSpecEndpoint extends Endpoint {
   public async handle(request: Request, response: Response): Promise<EndpointMetadata[]> {
     return this.httpServerRegistry.metadata;
   }
-
 }

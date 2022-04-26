@@ -18,25 +18,23 @@ import { PaynowProvider } from './providers/paynow.provider';
 (async () => {
   const app: CaviaApplication = await CaviaFactory
     .create({
-      components: {
-        providers: [
-          CreateUserEndpoint,
-          ApiSpecEndpoint,
-          UpdateUserEndpoint,
+      providers: [
+        CreateUserEndpoint,
+        ApiSpecEndpoint,
+        UpdateUserEndpoint,
 
-          PaynowProvider,
+        PaynowProvider,
 
-          SentryInterceptor,
-          LoggerInterceptor,
-          AuthInterceptor,
-          BodyParseInterceptor,
-          CookiesParseInterceptor,
-          QueryParseInterceptor,
-          ValidatorInterceptor,
+        SentryInterceptor,
+        LoggerInterceptor,
+        AuthInterceptor,
+        BodyParseInterceptor,
+        CookiesParseInterceptor,
+        QueryParseInterceptor,
+        ValidatorInterceptor,
 
-          ClearStorageWorker,
-        ],
-      },
+        ClearStorageWorker,
+      ],
       schemas: {
         env: {
           DATABASE_URL: {

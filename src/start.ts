@@ -38,8 +38,8 @@ import { PaynowProvider } from './providers/paynow.provider';
       schemas: {
         env: {
           DATABASE_URL: {
-            type: 'string',
             required: true,
+            type: 'string',
           },
         },
       },

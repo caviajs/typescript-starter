@@ -15,8 +15,8 @@ export class UpdateUserEndpoint extends Endpoint {
           required: true,
         },
         headers: {
-          members: {
-            'X-Test': {
+          properties: {
+            'x-test': {
               type: 'string',
               required: true,
             },

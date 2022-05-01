@@ -11,7 +11,6 @@ export class CreateUserEndpoint extends Endpoint {
     schema: {
       request: {
         body: {
-          members: {},
           type: 'object',
         },
       },

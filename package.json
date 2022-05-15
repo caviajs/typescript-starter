@@ -1,22 +1,24 @@
 {
   "name": "typescript-starter",
   "scripts": {
-    "serve": "ts-node src/start.ts",
-    "build": "tsc",
-    "prebuild": "rimraf dist",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "build": "rimraf dist && tsc",
+    "serve:dev": "ts-node src/serve.ts",
+    "serve:prod": "node dist/serve.js"
   },
   "dependencies": {
-    "@caviajs/core": "^0.0.1",
-    "reflect-metadata": "~0.1.13",
+    "@caviajs/http-body-parser": "^1.0.0",
+    "@caviajs/http-client": "^1.0.0",
+    "@caviajs/http-contract": "^1.0.0",
+    "@caviajs/http-exception": "^1.0.0",
+    "@caviajs/http-router": "^1.0.0",
+    "@caviajs/logger": "^1.0.0",
+    "@caviajs/validator": "^1.0.0",
+    "dotenv": "^16.0.0",
+    "edge.js": "^5.3.5",
     "rxjs": "~7.5.4"
   },
   "devDependencies": {
     "@types/node": "~16.11.7",
-    "@typescript-eslint/eslint-plugin": "~4.21.0",
-    "@typescript-eslint/parser": "~4.21.0",
-    "eslint": "~7.24.0",
     "rimraf": "~3.0.2",
     "ts-node": "~9.1.1",
     "typescript": "~4.2.4"

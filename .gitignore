@@ -5,7 +5,6 @@
 # include whitelist
 !/src/**
 !/.editorconfig
-!/.eslintrc
 !/.gitignore
 !/.npmrc
 !/package.json

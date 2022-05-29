@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 import * as http from 'http';
-import { HttpContract } from '@caviajs/http-contract';
+// import { HttpContract } from '@caviajs/http-contract';
 import { HttpRouter } from '@caviajs/http-router';
 import { Logger } from '@caviajs/logger';
 
@@ -24,7 +24,7 @@ import { ValidatorInterceptor } from './interceptors/validator-interceptor';
     .intercept(ValidatorInterceptor);
 
   if (config.production === false) {
-    HttpContract.setup('/_meta/contract', httpRouter);
+    // HttpContract.setup('/_meta/contract', httpRouter);
   }
 
   httpRouter

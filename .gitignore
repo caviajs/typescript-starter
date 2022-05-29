@@ -6,7 +6,6 @@
 !/src/**
 !/.editorconfig
 !/.gitignore
-!/.npmrc
 !/package.json
 !/package-lock.json
 !/tsconfig.build.json

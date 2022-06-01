@@ -3,6 +3,7 @@
 !*/
 
 # include whitelist
+!/.github/**
 !/src/**
 !/.editorconfig
 !/.gitignore

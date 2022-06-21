@@ -9,7 +9,7 @@
     "@caviajs/http-body-parser": "~0.1.0",
     "@caviajs/http-client": "~0.1.0",
     "@caviajs/http-exception": "~0.1.0",
-    "@caviajs/http-router": "~0.1.1",
+    "@caviajs/http-router": "~0.1.2",
     "@caviajs/logger": "~0.1.0",
     "dotenv": "^16.0.0",
     "rxjs": "~7.5.4"

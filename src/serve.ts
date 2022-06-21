@@ -1,15 +1,11 @@
-import 'dotenv/config';
-
 import * as http from 'http';
-// import { HttpContract } from '@caviajs/http-contract';
 import { HttpRouter } from '@caviajs/http-router';
 import { Logger } from '@caviajs/logger';
-
 import { config } from './config';
-import { UpdateUserRoute } from './routes/update-user-route';
-import { SentryInterceptor } from './interceptors/sentry-interceptor';
-import { BodyParseInterceptor } from './interceptors/body-parse-interceptor';
-import { ValidatorInterceptor } from './interceptors/validator-interceptor';
+import { HttpContractInterceptor } from './interceptors/http-contract-interceptor';
+import { HttpCookieInterceptor } from './interceptors/http-cookie-interceptor';
+import { HttpCorsInterceptor } from './interceptors/http-cors-interceptor';
+import { GuineaPigDetailsRoute } from './routes/guinea-pig-details-route';
 
 (async () => {
   // setup
@@ -19,16 +15,21 @@ import { ValidatorInterceptor } from './interceptors/validator-interceptor';
   const httpRouter = new HttpRouter();
 
   httpRouter
-    .intercept(SentryInterceptor)
-    .intercept(BodyParseInterceptor)
-    .intercept(ValidatorInterceptor);
+    .intercept(HttpCorsInterceptor)
+    .intercept(HttpCookieInterceptor)
+    .intercept(HttpContractInterceptor);
 
   if (config.production === false) {
-    // HttpContract.setup('/_meta/contract', httpRouter);
+    httpRouter
+      .route({
+        handler: () => httpRouter.specification,
+        method: 'GET',
+        path: '/meta/contract',
+      });
   }
 
   httpRouter
-    .route(UpdateUserRoute);
+    .route(GuineaPigDetailsRoute);
 
   const httpServer: http.Server = http.createServer((req, res) => {
     httpRouter.handle(req, res);

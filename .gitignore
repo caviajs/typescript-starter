@@ -4,6 +4,7 @@
 
 # include whitelist
 !/.github/**
+!/.husky/**
 !/src/**
 !/.editorconfig
 !/.eslintrc

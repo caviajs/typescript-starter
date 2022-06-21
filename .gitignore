@@ -6,6 +6,7 @@
 !/.github/**
 !/src/**
 !/.editorconfig
+!/.eslintrc
 !/.gitignore
 !/package.json
 !/package-lock.json

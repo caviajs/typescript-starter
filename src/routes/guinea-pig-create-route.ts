@@ -1,17 +1,15 @@
 import { Route } from '@caviajs/http-router';
 
-export const GuineaPigDetailsRoute: Route = {
+export const GuineaPigCreateRoute: Route = {
   handler: async (request, response): Promise<any> => {
-    return { id: request.params.id, name: 'Cavia' };
+    return { id: '1245', name: 'Cavia' };
   },
   metadata: {
     contract: {
-      name: 'guineaPigDetails',
+      name: 'guineaPigCreate',
       request: {
-        params: {
-          id: {
-            type: 'string',
-          },
+        body: {
+          'application/json': { required: true, type: 'object' },
         },
       },
       responses: {
@@ -24,9 +22,10 @@ export const GuineaPigDetailsRoute: Route = {
             type: 'object',
           }
         },
+        409: {},
       },
     },
   },
-  method: 'GET',
-  path: '/guinea-pigs/:id',
+  method: 'POST',
+  path: '/guinea-pigs',
 };

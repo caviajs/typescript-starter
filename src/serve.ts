@@ -6,6 +6,7 @@ import { HttpContractInterceptor } from './interceptors/http-contract-intercepto
 import { HttpCookieInterceptor } from './interceptors/http-cookie-interceptor';
 import { HttpCorsInterceptor } from './interceptors/http-cors-interceptor';
 import { GuineaPigDetailsRoute } from './routes/guinea-pig-details-route';
+import { GuineaPigCreateRoute } from './routes/guinea-pig-create-route';
 
 (async () => {
   // setup
@@ -29,6 +30,7 @@ import { GuineaPigDetailsRoute } from './routes/guinea-pig-details-route';
   }
 
   httpRouter
+    .route(GuineaPigCreateRoute)
     .route(GuineaPigDetailsRoute);
 
   const httpServer: http.Server = http.createServer((req, res) => {

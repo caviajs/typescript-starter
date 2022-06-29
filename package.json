@@ -11,7 +11,7 @@
   "dependencies": {
     "@caviajs/env": "^0.1.0",
     "@caviajs/http-client": "^0.1.1",
-    "@caviajs/http-contract": "^0.1.0",
+    "@caviajs/http-contract": "^0.2.0",
     "@caviajs/http-cookie": "^0.1.1",
     "@caviajs/http-cors": "^0.1.0",
     "@caviajs/http-exception": "^0.1.2",

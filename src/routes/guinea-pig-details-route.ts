@@ -9,20 +9,19 @@ export const GuineaPigDetailsRoute: Route = {
       name: 'guineaPigDetails',
       request: {
         params: {
-          id: {
-            type: 'string',
-          },
+          id: { required: true, type: 'string' },
         },
       },
       responses: {
         200: {
           body: {
             properties: {
-              id: { type: 'string' },
-              name: { type: 'string' },
+              id: { required: true, type: 'string' },
+              name: { required: true, type: 'string' },
             },
+            required: true,
             type: 'object',
-          }
+          },
         },
       },
     },

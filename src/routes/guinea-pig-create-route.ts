@@ -2,7 +2,7 @@ import { Route } from '@caviajs/http-router';
 
 export const GuineaPigCreateRoute: Route = {
   handler: async (request, response): Promise<any> => {
-    return { id: '1245', name: 'Cavia' };
+    return { id: '1245' };
   },
   metadata: {
     contract: {
@@ -16,11 +16,11 @@ export const GuineaPigCreateRoute: Route = {
         200: {
           body: {
             properties: {
-              id: { type: 'string' },
-              name: { type: 'string' },
+              id: { required: true, type: 'string' },
             },
+            required: true,
             type: 'object',
-          }
+          },
         },
         409: {},
       },

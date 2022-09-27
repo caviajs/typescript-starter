@@ -9,25 +9,25 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@caviajs/env": "^0.1.2",
-    "@caviajs/http-client": "^0.1.3",
-    "@caviajs/http-contract": "^0.3.0",
-    "@caviajs/http-cookie": "^0.2.0",
-    "@caviajs/http-cors": "^0.1.1",
-    "@caviajs/http-exception": "^0.1.4",
-    "@caviajs/http-router": "^0.1.3",
-    "@caviajs/logger": "^0.2.0",
-    "dotenv": "^16.0.2",
-    "rxjs": "~7.5.6"
+    "@caviajs/env": "^0.1.3",
+    "@caviajs/http-client": "^0.1.4",
+    "@caviajs/http-contract": "^0.4.1",
+    "@caviajs/http-cookie": "^0.2.2",
+    "@caviajs/http-cors": "^0.1.2",
+    "@caviajs/http-exception": "^0.1.5",
+    "@caviajs/http-router": "^0.1.4",
+    "@caviajs/logger": "^0.2.1",
+    "dotenv": "^16.0.0",
+    "rxjs": "~7.5.7"
   },
   "devDependencies": {
-    "@types/node": "~18.7.16",
-    "@typescript-eslint/eslint-plugin": "~5.33.1",
-    "@typescript-eslint/parser": "~5.36.2",
-    "eslint": "~8.20.0",
+    "@types/node": "~18.7.23",
+    "@typescript-eslint/eslint-plugin": "~5.38.1",
+    "@typescript-eslint/parser": "~5.38.1",
+    "eslint": "~8.24.0",
     "husky": "~8.0.1",
     "rimraf": "~3.0.2",
     "ts-node": "~10.9.1",
-    "typescript": "~4.8.3"
+    "typescript": "~4.7.4"
   }
 }

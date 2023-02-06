@@ -9,16 +9,17 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@caviajs/env": "^0.1.3",
-    "@caviajs/http-client": "^0.1.4",
-    "@caviajs/http-contract": "^0.4.1",
-    "@caviajs/http-cookie": "^0.2.2",
-    "@caviajs/http-cors": "^0.1.2",
-    "@caviajs/http-exception": "^0.1.5",
-    "@caviajs/http-router": "^0.1.4",
-    "@caviajs/logger": "^0.2.1",
+    "@caviajs/http-body": "^1.0.4",
+    "@caviajs/http-client": "^1.0.1",
+    "@caviajs/http-cookie": "^1.0.3",
+    "@caviajs/http-cors": "^1.0.2",
+    "@caviajs/http-exception": "^1.0.1",
+    "@caviajs/http-query": "^1.0.2",
+    "@caviajs/http-router": "^1.0.3",
+    "@caviajs/logger": "^0.2.2",
     "dotenv": "^16.0.0",
-    "rxjs": "~7.5.7"
+    "rxjs": "~7.5.7",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@types/node": "~18.7.23",

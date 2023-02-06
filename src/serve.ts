@@ -2,33 +2,22 @@ import * as http from 'http';
 import { HttpRouter } from '@caviajs/http-router';
 import { Logger } from '@caviajs/logger';
 import { config } from './config';
-import { HttpContractInterceptor } from './interceptors/http-contract-interceptor';
-import { HttpCookieInterceptor } from './interceptors/http-cookie-interceptor';
-import { HttpCorsInterceptor } from './interceptors/http-cors-interceptor';
+import { CorsInterceptor } from './interceptors/cors-interceptor';
 import { GuineaPigDetailsRoute } from './routes/guinea-pig-details-route';
 import { GuineaPigCreateRoute } from './routes/guinea-pig-create-route';
 
 (async () => {
   // setup
-  // FooContract.connectionUrl = config.foo.connectionUrl;
+  // ...
 
   // Http router and server prepare
   const httpRouter = new HttpRouter();
 
+  // interceptors
   httpRouter
-    .intercept(HttpCorsInterceptor)
-    .intercept(HttpCookieInterceptor)
-    .intercept(HttpContractInterceptor);
+    .intercept(CorsInterceptor);
 
-  if (config.production === false) {
-    httpRouter
-      .route({
-        handler: () => httpRouter.specification,
-        method: 'GET',
-        path: '/meta/contract',
-      });
-  }
-
+  // routes
   httpRouter
     .route(GuineaPigCreateRoute)
     .route(GuineaPigDetailsRoute);

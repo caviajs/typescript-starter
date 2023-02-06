@@ -1,17 +1,22 @@
 import 'dotenv/config';
-import { Env } from '@caviajs/env';
+import { z } from 'zod';
 
-Env.validate({
-  NODE_ENV: {
-    expressions: [/^(dev|prod|test)$/],
-    required: true,
-  },
+const ENV_SCHEMA = z.object({
+  NODE_ENV: z.enum(['local', 'test', 'stage', 'prod']),
 });
+
+const validation = ENV_SCHEMA.safeParse(process.env);
+
+if (!validation.success) {
+  throw new Error(JSON.stringify(validation));
+}
+
+const env: z.infer<typeof ENV_SCHEMA> = process.env as any;
 
 export const config = {
   http: {
     port: 3000,
   },
 
-  production: process.env.NODE_ENV === 'prod',
+  production: env.NODE_ENV === 'prod',
 };

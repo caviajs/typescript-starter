@@ -12,7 +12,7 @@
     "@caviajs/env": "^0.1.3",
     "@caviajs/http-client": "^0.1.4",
     "@caviajs/http-contract": "^0.4.1",
-    "@caviajs/http-cookie": "^0.2.2",
+    "@caviajs/http-cookie": "^1.0.3",
     "@caviajs/http-cors": "^0.1.2",
     "@caviajs/http-exception": "^0.1.5",
     "@caviajs/http-router": "^0.1.4",

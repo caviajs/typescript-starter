@@ -9,7 +9,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@caviajs/http-body": "^1.0.5",
+    "@caviajs/http-body": "^1.0.6",
     "@caviajs/http-client": "^1.0.3",
     "@caviajs/http-cookie": "^1.0.5",
     "@caviajs/http-cors": "^1.0.4",

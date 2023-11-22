@@ -9,7 +9,7 @@ import { GuineaPigCreateRoute } from './routes/guinea-pig-create-route';
 import { OpenAPIRegistry, OpenApiGeneratorV3, RouteConfig } from '@asteasolutions/zod-to-openapi';
 import { z } from 'zod';
 import { COMMON_HEADERS_SCHEMA } from './schema';
-import { BootstrapInterceptor } from 'interceptors/bootstrap.interceptor';
+import { BootstrapInterceptor } from './interceptors/bootstrap.interceptor';
 
 const { version } = require('../package.json');
 

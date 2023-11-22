@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "target": "es2017",
-    "baseUrl": "./src",
+    "baseUrl": "app",
     "outDir": "./dist",
     "sourceMap": true,
     "incremental": true,
@@ -16,7 +16,10 @@
       "dom"
     ]
   },
+  "files": [
+    "app/app.d.ts"
+  ],
   "include": [
-    "src/**/*"
+    "app/**/*"
   ]
 }

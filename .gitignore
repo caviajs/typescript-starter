@@ -4,11 +4,10 @@
 
 # include whitelist
 !/.github/**
-!/.husky/**
-!/src/**
+!/app/**
+!/public/**
 !/.editorconfig
 !/.env.example
-!/.eslintrc
 !/.gitignore
 !/package.json
 !/package-lock.json

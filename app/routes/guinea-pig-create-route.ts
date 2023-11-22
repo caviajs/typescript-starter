@@ -32,7 +32,7 @@ export const GuineaPigCreateRoute: Route = {
       },
       responses: {
         '201': {
-          description: '',
+          description: 'Guinea pig created',
         },
         '400': {
           description: '',

@@ -41,7 +41,7 @@ export const GuineaPigDetailsRoute: Route = {
       },
       responses: {
         '200': {
-          description: '',
+          description: 'Guinea pig details',
           content: {
             'application/json': {
               schema: RESPONSE_BODY_SCHEMA_200,

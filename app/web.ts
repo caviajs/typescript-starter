@@ -6,7 +6,7 @@ import { config } from './config';
 import { CorsInterceptor } from './interceptors/cors-interceptor';
 import { GuineaPigDetailsRoute } from './routes/guinea-pig-details-route';
 import { GuineaPigCreateRoute } from './routes/guinea-pig-create-route';
-import { OpenAPIRegistry, OpenApiGeneratorV3, RouteConfig } from '@asteasolutions/zod-to-openapi';
+import { OpenAPIRegistry, OpenApiGeneratorV3 } from '@asteasolutions/zod-to-openapi';
 import { z } from 'zod';
 import { COMMON_HEADERS_SCHEMA } from './schema';
 import { BootstrapInterceptor } from './interceptors/bootstrap.interceptor';
@@ -62,10 +62,7 @@ const { version } = require('../package.json');
                 params: route.metadata?.swagger?.request?.params,
                 query: route.metadata?.swagger?.request?.query,
               },
-              responses: {
-                '500': { description: 'Internal Server Error' },
-                ...(route.metadata?.swagger?.responses || {}),
-              },
+              responses: route.metadata?.swagger?.responses || {},
               tags: route.metadata?.swagger?.tags || [],
               security: [
                 // {

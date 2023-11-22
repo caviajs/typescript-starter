@@ -1,3 +1,5 @@
+import './polyfills';
+
 import * as http from 'http';
 import { readFileSync } from 'fs';
 import { join } from 'path';
